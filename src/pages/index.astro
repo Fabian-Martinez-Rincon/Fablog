@@ -1,0 +1,74 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import { IoArrowForward } from 'react-icons/io5/index.js'
+import Masthead from '../components/Masthead.astro'
+import { Image } from '@astrojs/image/components'
+import CreatedWithSection from '../components/CreatedWithSection.astro'
+
+const posts = (await Astro.glob('./posts/*.md')).sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.createdAt).valueOf() -
+    new Date(a.frontmatter.createdAt).valueOf()
+)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header title={SITE_TITLE} />
+    <main class="pt-[56px]">
+      <Masthead />
+      <Content>
+        <section>
+          <p class="mb-8 indent-4">
+            Como estudiante, muchas veces me gustaría aplicar los conocimientos que voy aprendiendo a lo largo
+             de mi carrera, por eso arme este blog, para poder informar y demostrar mis conocimientos sobre temas 
+             en los que no tuve la oportunidad de trabajar.
+            <a
+              class="inline-flex items-center gap-1 indent-1 text-orange-500"
+              href={HOMEPAGE_URL}
+              >Leer más sobre mi <IoArrowForward className="inline" />
+            </a>
+          </p>
+        </section>
+        <section>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {
+              posts.map(post => (
+                <li class="text-center mb-4">
+                  <a href={post.url}>
+                    <Image
+                      class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+                      src={post.frontmatter.heroImage}
+                      width={720 * 2}
+                      aspectRatio={2.0}
+                      alt="Thumbnail"
+                    />
+                    <div class="mt-3 text-xl font-bold">
+                      {post.frontmatter.title}
+                    </div>
+                    {post.frontmatter.description && (
+                      <div class="opacity-70">
+                        {post.frontmatter.description}
+                      </div>
+                    )}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+        <CreatedWithSection />
+      </Content>
+    </main>
+    <Footer />
+  </Body>
+</html>
