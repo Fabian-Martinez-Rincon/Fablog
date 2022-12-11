@@ -1,7 +1,7 @@
 ---
 const isProd = import.meta.env.PROD
 const baseAssetUrl = isProd
-  ? 'https://craftzdog.global.ssl.fastly.net/uses'
+  ? 'https://user-images.githubusercontent.com/55964635/206924973-5c389b51-4ae4-4685-b23d-62e1b789c22f.mp4'
   : ''
 ---
 
@@ -9,17 +9,17 @@ const baseAssetUrl = isProd
   <div class="absolute w-full h-full overflow-hidden">
     <video
       class="absolute inset-0 min-w-full min-h-full object-cover opacity-30"
-      poster="/7.mp4"
+      poster="https://user-images.githubusercontent.com/55964635/206924973-5c389b51-4ae4-4685-b23d-62e1b789c22f.mp4"
       autoplay="autoplay"
       muted="muted"
       loop="loop"
       playsinline
       ><source
-        src={baseAssetUrl + '/7.mp4'}
+        src={'https://user-images.githubusercontent.com/55964635/206924973-5c389b51-4ae4-4685-b23d-62e1b789c22f.mp4' }
         type="video/webm; codecs=vp9"
       />
       <source
-        src={baseAssetUrl + '/7.mp4'}
+        src={'https://user-images.githubusercontent.com/55964635/206924973-5c389b51-4ae4-4685-b23d-62e1b789c22f.mp4'}
         type="video/mp4; codecs=hvc1"
       />
     </video>
