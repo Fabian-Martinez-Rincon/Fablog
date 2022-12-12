@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = 'Fablog'
 export const SITE_DESCRIPTION = 'A curated list of the tech I use'
-export const HOMEPAGE_URL = 'https://fabian-martinez1.github.io/'
+export const HOMEPAGE_URL = 'https://fabianmartinez.vercel.app/'
