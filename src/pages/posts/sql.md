@@ -22,7 +22,7 @@ heroImage: /posts/sql2.jpg
 
 Para poder trabajar con los datos de manera más comoda
 podemos insertar la base de datos que dejare
-en el siguiente links y como resultado nos quedara lo siguiente:
+en el siguiente [link](https://github.com/Fabian-Martinez1/Fablog/blob/main/src/pages/posts/files/sql.json) y como resultado nos quedara las siguientes tablas:
 
 ![image](https://user-images.githubusercontent.com/55964635/207398864-73e8d6c0-6306-4d0f-a598-7e10febbee94.png)
 
