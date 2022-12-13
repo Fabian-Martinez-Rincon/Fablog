@@ -14,10 +14,12 @@ heroImage: /posts/sql.jpg
 
 ### Indice
 
-Cliente(idCliente, nombre, apellido, DNI, telefono, direccion)
-Factura (nroTicket, total, fecha, hora,idCliente (fk))
-Detalle(nroTicket, idProducto, cantidad, preciounitario)
-Producto(idProducto, descripcion, precio, nombreP, stock)
+- **Cliente**(idCliente, nombre, apellido, DNI, telefono, direccion)
+- **Factura** (nroTicket, total, fecha, hora,idCliente (fk))
+- **Detalle**(nroTicket, idProducto, cantidad, preciounitario)
+- **Producto**(idProducto, descripcion, precio, nombreP, stock)
+
+<br>
 
 ```sql
 CREATE TABLE Cliente (
