@@ -10,14 +10,37 @@ tags:
 heroImage: /posts/sql.jpg
 ---
 
-- [Web para Practica sql](https://sqliteonline.com/)
-
-### Indice
+## Para la siguientes tablas
 
 - **Cliente**(idCliente, nombre, apellido, DNI, telefono, direccion)
 - **Factura** (nroTicket, total, fecha, hora,idCliente (fk))
 - **Detalle**(nroTicket, idProducto, cantidad, preciounitario)
 - **Producto**(idProducto, descripcion, precio, nombreP, stock)
+- [Web para Practica sql](https://www.programiz.com/sql/online-compiler/)
+
+### Indice
+- [Insertar Valores en la tabla]()
+
+<br>
+
+
+
+
+
+### Borrar
+
+<br>
+
+Antes de insertar, para tener limpio el trabajo, eliminamos las tablas 
+existentes con: 
+
+```sql
+DROP TABLE customers;
+DROP TABLE Orders;
+DROP TABLE Shippings;
+```
+
+### Insertar 
 
 <br>
 
