@@ -29,22 +29,14 @@ en el siguiente links y como resultado nos quedara lo siguiente:
 <br>
 
 ### Indice
-- [Insertar Valores en la tabla]()
+- [Configuración inicial (opcional)](#configuración-inicial)
 
 <br>
 
-
-
-
-
-### Borrar
-
-
+### Configuración inicial 
 
 Antes de insertar, para tener limpio el trabajo, eliminamos las tablas 
 existentes con: 
-
-
 
 ```sql
 DROP TABLE demo;
