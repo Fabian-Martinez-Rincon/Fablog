@@ -16,7 +16,17 @@ heroImage: /posts/sql2.jpg
 - **Factura** (nroTicket, total, fecha, hora,idCliente (fk))
 - **Detalle**(nroTicket, idProducto, cantidad, preciounitario)
 - **Producto**(idProducto, descripcion, precio, nombreP, stock)
-- [Web para Practica sql](https://www.programiz.com/sql/online-compiler/)
+- [Web para Practica sql](http://www.sqliteonline.net/)
+
+<br>
+
+Para poder trabajar con los datos de manera más comoda
+podemos insertar la base de datos que dejare
+en el siguiente links y como resultado nos quedara lo siguiente:
+
+![image](https://user-images.githubusercontent.com/55964635/207398864-73e8d6c0-6306-4d0f-a598-7e10febbee94.png)
+
+<br>
 
 ### Indice
 - [Insertar Valores en la tabla]()
@@ -29,22 +39,22 @@ heroImage: /posts/sql2.jpg
 
 ### Borrar
 
-<br>
+
 
 Antes de insertar, para tener limpio el trabajo, eliminamos las tablas 
 existentes con: 
 
-<br>
+
 
 ```sql
-DROP TABLE customers;
-DROP TABLE Orders;
-DROP TABLE Shippings;
+DROP TABLE demo;
 ```
+
+<br>
 
 ## Creamos las tablas
 
-<br>
+
 
 ```sql
   CREATE TABLE Cliente (
@@ -60,7 +70,7 @@ DROP TABLE Shippings;
     total INTEGER,
     fecha DATE,
     hora TIME,
-    idCliente (fk) INTEGER
+    idCliente INTEGER
   );
 
   CREATE TABLE Detalle (
