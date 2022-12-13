@@ -40,50 +40,72 @@ DROP TABLE Orders;
 DROP TABLE Shippings;
 ```
 
-### Insertar 
+### Creamos las tablas
 
 <br>
 
 ```sql
-CREATE TABLE Cliente (
-   idCliente INTEGER,
-   nombre VARCHAR(255),
-   apellido VARCHAR(255),
-   DNI VARCHAR(255),
-   telefono VARCHAR(255),
-   direccion VARCHAR(255)
-);
+  CREATE TABLE Cliente (
+    idCliente INTEGER,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    DNI VARCHAR(255),
+    telefono VARCHAR(255),
+    direccion VARCHAR(255)
+  );
+  CREATE TABLE Factura (
+    nroTicket INTEGER,
+    total INTEGER,
+    fecha DATE,
+    hora TIME,
+    idCliente (fk) INTEGER
+  );
 
-  INSERT INTO Cliente (idCliente, nombre, apellido, DNI, telefono, direccion) VALUES
+  CREATE TABLE Detalle (
+    nroTicket INTEGER,
+    idProducto INTEGER,
+    cantidad INTEGER,
+    preciounitario INTEGER
+  );
+
+  CREATE TABLE Producto (
+    idProducto INTEGER,
+    descripcion VARCHAR(255),
+    precio INTEGER,
+    nombreP VARCHAR(255),
+    stock INTEGER
+  );
+
+```
+
+
+
+### Insertamos valores en las tablas creadas
+
+```sql
+  INSERT INTO Cliente 
+  (idCliente, nombre, apellido, DNI, telefono, direccion) 
+  VALUES
   (1, 'Juan', 'Pérez', '12345678', '987654321', 'Calle Falsa 123'),
   (2, 'María', 'Gómez', '23456789', '876543219', 'Calle Falsa 456'),
   (3, 'Carlos', 'Rodríguez', '34567890', '765432198', 'Calle Falsa 789'),
   (4, 'Ana', 'Sánchez', '45678901', '654321987', 'Calle Falsa 321'),
   (5, 'Sofía', 'Martínez', '56789012', '543219876', 'Calle Falsa 654')
 
-CREATE TABLE Factura (
-   nroTicket INTEGER,
-   total INTEGER,
-   fecha DATE,
-   hora TIME,
-   idCliente (fk) INTEGER
-);
 
-  INSERT INTO Factura (nroTicket, total, fecha, hora, idCliente) VALUES
+  INSERT INTO Factura 
+  (nroTicket, total, fecha, hora, idCliente) 
+  VALUES
   (1, 10.50, '2022-12-13', '12:00:00', 1),
   (2, 20.00, '2022-12-13', '12:30:00', 2),
   (3, 30.75, '2022-12-13', '13:00:00', 3),
   (4, 40.25, '2022-12-13', '13:30:00', 4),
   (5, 50.10, '2022-12-13', '14:00:00', 5)
 
-CREATE TABLE Detalle (
-   nroTicket INTEGER,
-   idProducto INTEGER,
-   cantidad INTEGER,
-   preciounitario INTEGER
-);
 
-  INSERT INTO Detalle (nroTicket, idProducto, cantidad, preciounitario) VALUES
+  INSERT INTO Detalle 
+  (nroTicket, idProducto, cantidad, preciounitario) 
+  VALUES
   (1, 1, 2, 5.25),
   (1, 2, 3, 3.50),
   (2, 3, 1, 10.00),
@@ -95,14 +117,10 @@ CREATE TABLE Detalle (
   (5, 9, 3, 3.75),
   (5, 10, 2, 5.50)
 
-CREATE TABLE Producto (
-   idProducto INTEGER,
-   descripcion VARCHAR(255),
-   precio INTEGER,
-   nombreP VARCHAR(255),
-   stock INTEGER
-);
-  INSERT INTO Producto (idProducto, descripcion, precio, nombreP, stock) VALUES
+
+  INSERT INTO Producto 
+  (idProducto, descripcion, precio, nombreP, stock) 
+  VALUES
   (1, 'Lápiz de grafito', 1.50, 'Lápiz', 100),
   (2, 'Borrador de goma', 0.50, 'Borrador', 200),
   (3, 'Cuaderno de rayas', 3.50, 'Cuaderno', 150),
