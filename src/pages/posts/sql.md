@@ -30,8 +30,20 @@ en el siguiente [link](https://github.com/Fabian-Martinez1/Fablog/blob/main/src/
 
 ### Indice
 - [Configuración inicial (opcional)](#configuración-inicial)
+- [Like](#like)
+- [Solamente durante el año 2022]()
 
 <br>
+
+### Like
+
+```sql
+SELECT *
+FROM Cliente
+WHERE (apellido LIKE "%ez")
+```
+
+![image](https://user-images.githubusercontent.com/55964635/207410085-24ab63dd-3cdd-4287-be90-65e75627852e.png)
 
 ### Configuración inicial 
 
