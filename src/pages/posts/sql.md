@@ -34,13 +34,15 @@ heroImage: /posts/sql2.jpg
 Antes de insertar, para tener limpio el trabajo, eliminamos las tablas 
 existentes con: 
 
+<br>
+
 ```sql
 DROP TABLE customers;
 DROP TABLE Orders;
 DROP TABLE Shippings;
 ```
 
-### Creamos las tablas
+## Creamos las tablas
 
 <br>
 
@@ -78,9 +80,9 @@ DROP TABLE Shippings;
 
 ```
 
+<br>
 
-
-### Insertamos valores en las tablas creadas
+## Insertamos valores en las tablas creadas
 
 ```sql
   INSERT INTO Cliente 
