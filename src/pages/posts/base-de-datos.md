@@ -7,18 +7,27 @@ createdAt: 1663134489800
 updatedAt: 1663635618067
 tags:
   - Facultad
-heroImage: /posts/dbd.jpg
+heroImage: /posts/dbd2.jpg
 ---
 
 
 ### ``Indice``
-- [Conceptual](#conceptual)
-    - [Parcial](#parcial-conceptual)
-- [Logico-Fisico](#logicofisico)
-    - [Parcial Logico](#parcial-logico)
-    - [Parcial Fisico](#parcial-fisico)
-- [Algebra Relacional y Sql](#algebra-y-sql)
-    - [Parcial Algebra y Sql](#parcial-algebra-y-sql)
+- [``Conceptual``](#conceptual)
+  - [Parcial Conceptual](#parcial-conceptual)
+    - [📚 Contexto Resuelto](#-contexto-resuelto)
+- [``Logico|Fisico``](#logicofisico)
+  - [Logico](#logico)
+  - [Fisico Entidades](#fisico-entidades)
+  - [Fisico Relaciones](#fisico-relaciones)
+  - [Parcial](#parcial)
+  - [Parcial Logico](#parcial-logico)
+  - [Parcial Fisico](#parcial-fisico)
+    - [Entidades](#entidades)
+    - [Relaciones](#relaciones)
+- [`Algebra y Sql`](#algebra-y-sql)
+  - [Algebra Relacional Operaciones importantes](#algebra-relacional-operaciones-importantes)
+  - [Parcial Algebra y Sql](#parcial-algebra-y-sql)
+- [Links](#links)
 
 <br>
 
