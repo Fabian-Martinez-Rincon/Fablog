@@ -10,55 +10,7 @@ tags:
 heroImage: /posts/sql2.jpg
 ---
 
-## Para la siguientes tablas
-
-- **Cliente**(idCliente, nombre, apellido, DNI, telefono, direccion)
-- **Factura** (nroTicket, total, fecha, hora,idCliente (fk))
-- **Detalle**(nroTicket, idProducto, cantidad, preciounitario)
-- **Producto**(idProducto, descripcion, precio, nombreP, stock)
-- [Web para Practica sql](http://www.sqliteonline.net/)
-
-<br>
-
-Para poder trabajar con los datos de manera más comoda
-podemos insertar la base de datos que dejare
-en el siguiente [link](https://github.com/Fabian-Martinez1/Fablog/blob/main/src/pages/posts/files/sql.json) y como resultado nos quedara las siguientes tablas:
-
-![image](https://user-images.githubusercontent.com/55964635/207398864-73e8d6c0-6306-4d0f-a598-7e10febbee94.png)
-
-<br>
-
-### Indice
-- [Configuración inicial (opcional)](#configuración-inicial)
-- [Like](#like)
-- [Solamente durante el año 2022]()
-
-<br>
-
-### Like
-
-```sql
-SELECT *
-FROM Cliente
-WHERE (apellido LIKE "%ez")
-```
-
-![image](https://user-images.githubusercontent.com/55964635/207410085-24ab63dd-3cdd-4287-be90-65e75627852e.png)
-
-### Configuración inicial 
-
-Antes de insertar, para tener limpio el trabajo, eliminamos las tablas 
-existentes con: 
-
-```sql
-DROP TABLE demo;
-```
-
-<br>
-
 ## Creamos las tablas
-
-
 
 ```sql
   CREATE TABLE Cliente (
@@ -148,3 +100,48 @@ DROP TABLE demo;
   (9, 'Sacapuntas', 0.75, 'Sacapuntas', 50),
   (10, 'Grapadora', 5.00, 'Grapadora', 40)
 ```
+
+## Para la siguientes tablas
+
+- **Cliente**(idCliente, nombre, apellido, DNI, telefono, direccion)
+- **Factura** (nroTicket, total, fecha, hora,idCliente (fk))
+- **Detalle**(nroTicket, idProducto, cantidad, preciounitario)
+- **Producto**(idProducto, descripcion, precio, nombreP, stock)
+- [Web para Practica sql](http://www.sqliteonline.net/)
+
+<br>
+
+Para poder trabajar con los datos de manera más comoda
+podemos insertar la base de datos que dejare
+en el siguiente [link](https://github.com/Fabian-Martinez1/Fablog/blob/main/src/pages/posts/files/sql.json) y como resultado nos quedara las siguientes tablas:
+
+![image](https://user-images.githubusercontent.com/55964635/207497718-948a1202-5294-4ffc-8ce4-095a06023fdb.png)
+
+<br>
+
+### Indice
+- [Like](#like)
+- [Solamente durante un año especifico](#solamente-durante-un-año-especifico)
+
+
+<br>
+
+### Like
+
+```sql
+SELECT *
+FROM Cliente
+WHERE (apellido LIKE "%ez")
+```
+
+<br>
+
+### Solamente durante un año especifico
+
+```sql
+SELECT c.nombre, c.apellido, c.DNI, c.telefono, c.direccion
+FROM Cliente c 
+	INNER JOIN Factura f ON (c.idCliente = f.idCliente)
+WHERE (f.fecha BETWEEN "2020-1-1" and "2020-12-31")
+```
+
