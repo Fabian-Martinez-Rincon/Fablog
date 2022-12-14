@@ -11,7 +11,7 @@ heroImage: /posts/oo1.jpg
 ---
 
 
-## Parcial Primera Fecha
+## `Parcial Primera Fecha`
 
 Nos contratan de la agencia de recaudación de la provincia de Buenos Aires para hacer un sistema para el cálculo del impuesto que deben pagar los contribuyentes.
 
@@ -34,6 +34,7 @@ El sistoma ofrece la siguiente funcionalidad:
 - En caso contrario, el porcentaje para un automotor es el **5%** mientras que para una embarcación ese porcentaje varía según el valor de la misma. Si éste es menor a **1 millón**, es el **10%**, caso contrario, el **15%**.
 
 
+
 **Contribuyentes que más pagan de una localidad**: Dada una localidad y un número N, se debe retornar los N contribuyentes de la localidad recibida que más deben pagar por sus bienes.
 
 Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la funcionalidad antes descrita. Se espera que entregue lo siguiente:
@@ -46,11 +47,9 @@ Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la fu
 
 ### Notas
 - Para calcular los años entre dos fechas puede utilizar la siguiente expresión
-
-
-ChronoUnit.YEARS.between(fechat, fecha2);
-
-Donde la fecha1 es anterior a fecha2. La expresión retorna la cantidad de años entre ambas fechas.
-
+  ```java
+  ChronoUnit.YEARS.between(fechat, fecha2);
+  ```
+-   Donde la fecha1 es anterior a fecha2. La expresión retorna la cantidad de años entre ambas fechas.
 - Implemente todos los constructores que considere necesarios
 - Puede implementar un getter y un setter, y asumir a existencia del resto.

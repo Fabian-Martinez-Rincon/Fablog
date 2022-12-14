@@ -11,3 +11,8 @@ body {
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
 }
+ul {
+  list-style-type: disc;
+  padding-bottom: 3%;
+  
+}
