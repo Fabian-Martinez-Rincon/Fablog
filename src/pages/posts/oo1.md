@@ -55,3 +55,42 @@ Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la fu
 - Puede implementar un getter y un setter, y asumir a existencia del resto.
 
 --- 
+
+## Objetos
+
+- [Sistema](#sistema)
+- [Contribuyente](#contribuyente)
+- [Propiedad \<interface>](#propiedad)
+- [Vehiculo \<abstract>](#vehiculo)
+- [Inmueble](#inmueble)
+
+### Sistema
+### Contribuyente
+### Propiedad
+### Vehiculo
+
+```java
+public abstract class Vehiculo implements Propiedad{
+  private String patente;
+  private LocalDate fechaFabricacion;
+  private double valor;
+  
+  public Vehiculo(String patente, LocalDate fechaFabricacion, double valor){
+    this.patente=patente;
+    this.fechaFabricacion=fechaFabricacion;
+    this.valor=valor;
+  }
+
+  public double getValor(){
+    return valor;
+  }
+
+  abstract public double getPorcentaje();
+
+  public int
+}
+```
+
+### Embarcacion
+### Automotor
+### Inmueble
