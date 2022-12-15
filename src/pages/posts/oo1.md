@@ -118,7 +118,25 @@ public class Sistema(){
 
 ### Contribuyente
 
+```java
+public class Contribuyente{
+  private String nombre, localidad, mail;
+  private int dni;
+  private List<Propiedad> propiedades;
 
+  public Contribuyente(String nombre, String localidad, String email, int dni){
+    this.nombre = nombre;
+    this.localidad = localidad;
+    this.email = email;
+    this.dni = dni;
+    this.propiedades = new ArrayList<>();
+  }
+
+  public void agregarPropiedad(Propiedad p){
+    propiedades.add(p);
+  }
+}
+```
 
 ### Propiedad
 ### Vehiculo
