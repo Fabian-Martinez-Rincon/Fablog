@@ -90,8 +90,28 @@ public class Sistema(){
 
   public Automotor agregarAutomotor(Contribuyente c, String patente, LocalDate fechaFabricacion, double valor, String marca, String modelo){
     Automotor nuevo = nuevo new Automotor(patente, fechaFabricacion, valor, marca, modelo);
+    c.agregarPropiedad(nuevo);
+    return nuevo;
   }
 
+  public Embarcacion agregarEmbarcacion(Contribuyente c, String patente, LocalDate fechaFabricacion, double valor, String nombre){
+    Embarcacion nuevo = new Embarcacion(patente, fechaFabricacion, valor, nombre);
+    c.agregarPropiedad(nuevo);
+    return nuevo;
+  }
+
+  public List<Contribuyente> masPagan (String localidad, int N){
+    return contribuyentes.stream().
+      filter(c->c.viveEn(localidad))
+      .sorted((ex1, ex2) -> Double.compare(ex2.calcularImpuesto(), ex1.calcularImpuestos()))
+      .limit(N)
+      .collect(Collectors.toList());
+    //Se ordena de mayor a menor
+  }
+
+  public double calcularImpuesto(Contribuyente c){
+    return c.calcularImpuesto();
+  }
 
 }
 ```
