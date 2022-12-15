@@ -64,7 +64,38 @@ Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la fu
 - [Vehiculo \<abstract>](#vehiculo)
 - [Inmueble](#inmueble)
 
+---
+
 ### Sistema
+
+```java
+public class Sistema(){
+  private List<Contribuyente> contribuyentes;
+
+  public Sistema(){
+    this.contribuyentes = new ArrayList();
+  }
+
+  public Contribuyente agregarContribuyente(String nombre, String localidad, String email, int dni){
+    Contribuyente nuevo = new Contribuyentes(nombre, localidad, email, dni);
+    contribuyentes.add(nuevo);
+    return nuevo;
+  }
+
+  public Inmueble agregarInmueble(Contribuyente c, int nroPartida, double valorLote, double valorEdificacion){
+    Inmueble nuevo = new Inmueble(nroPartida, valorLote, valorEdificacion);
+    c.agregarPropiedad(nuevo);
+    return nuevo;
+  }
+
+  public Automotor agregarAutomotor(Contribuyente c, String patente, LocalDate fechaFabricacion, double valor, String marca, String modelo){
+    Automotor nuevo = nuevo new Automotor(patente, fechaFabricacion, valor, marca, modelo);
+  }
+
+
+}
+```
+
 ### Contribuyente
 ### Propiedad
 ### Vehiculo
@@ -87,7 +118,16 @@ public abstract class Vehiculo implements Propiedad{
 
   abstract public double getPorcentaje();
 
-  public int
+  public int getAntiguedad(){
+    return (int) ChronoUnit.YEARS.between(fechaFabricaciom, LocalDate.now());
+  }
+  
+  public double calcularImpuesto(){
+    if (getAntiguedad() > 10){
+      return 0;
+    }
+    return getPorcentaje() * valor;
+  }
 }
 ```
 
