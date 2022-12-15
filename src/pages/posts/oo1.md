@@ -66,6 +66,8 @@ Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la fu
 
 ---
 
+<br>
+
 ### Sistema
 
 ```java
@@ -116,6 +118,8 @@ public class Sistema(){
 }
 ```
 
+<br>
+
 ### Contribuyente
 
 ```java
@@ -135,10 +139,28 @@ public class Contribuyente{
   public void agregarPropiedad(Propiedad p){
     propiedades.add(p);
   }
+
+  public boolean viveEn(String localidad){
+    return this.localidad.equals(localidad);
+  }
+
+  public double calcularImpuestos(){
+    return propiedades.stream()
+      .mapToDouble(p->p.calcularImpuesto()).sum();
+  }
 }
 ```
 
+<br>
+
 ### Propiedad
+
+```java
+
+```
+
+<br>
+
 ### Vehiculo
 
 ```java
@@ -172,7 +194,26 @@ public abstract class Vehiculo implements Propiedad{
 }
 ```
 
+<br>
+
 ### Embarcacion
+
+```java
+
+```
+
+<br>
+
 ### Automotor
+
+```java
+
+```
+
+<br>
+
 ### Inmueble
 
+```java
+
+```
