@@ -52,9 +52,9 @@ Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la fu
 
 - [UML](https://lucid.app/lucidchart/bd9ff479-d0f1-4a4f-807a-d6546f59684f/edit?beaconFlowId=7DFA4BB45E07B703&invitationId=inv_04cac74f-82c1-4290-be16-967a3da3d4d3&page=HWEp-vi-RSFO#)
 
-### Uml (vas a tener que hacer zoom jaja)
+### Uml (Click derecho y abrir en la web para el zoom)
 
-![](/src/pages/posts/files/uml1.JPG)
+![](/src/pages/posts/files/image.webp)
 
 ## Objetos
 
