@@ -39,9 +39,9 @@ El sistoma ofrece la siguiente funcionalidad:
 
 Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la funcionalidad antes descrita. Se espera que entregue lo siguiente:
 
-- 1. Diseño de su solución en un diagrama de clases UML.
-- 2. Implementación en Java de la funcionalidad requerida.
-- 3. Implemente los tests necesarios para **la funcionalidad de calcular el impuesto**, justificando su elección en base a valores de borde y particiones equivalentes. Considere contribuyentes que solamente pueden ser embarcaciones.
+- Diseño de su solución en un diagrama de clases UML.
+- Implementación en Java de la funcionalidad requerida.
+- Implemente los tests necesarios para **la funcionalidad de calcular el impuesto**, justificando su elección en base a valores de borde y particiones equivalentes. Considere contribuyentes que solamente pueden ser embarcaciones.
 
 
 
@@ -53,3 +53,5 @@ Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la fu
 -   Donde la fecha1 es anterior a fecha2. La expresión retorna la cantidad de años entre ambas fechas.
 - Implemente todos los constructores que considere necesarios
 - Puede implementar un getter y un setter, y asumir a existencia del resto.
+
+--- 

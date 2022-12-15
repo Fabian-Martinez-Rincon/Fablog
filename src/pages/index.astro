@@ -43,7 +43,7 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {
               posts.map(post => (
-                <li class="text-center mb-4">
+                <div class="text-center mb-4">
                   <a href={post.url}>
                     <Image
                       class="border border-slate-300 dark:border-zinc-700 rounded-xl"
@@ -61,7 +61,7 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
                       </div>
                     )}
                   </a>
-                </li>
+                </div>
               ))
             }
           </ul>
