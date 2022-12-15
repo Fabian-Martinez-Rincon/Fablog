@@ -18,7 +18,7 @@ heroImage: /posts/sql3.jpg
 - **Detalle**(nroTicket, idProducto, cantidad, preciounitario)
 - **Producto**(idProducto, descripcion, precio, nombreP, stock)
 - [Web para Practica sql](http://www.sqliteonline.net/)
-- [Insertar valores para empezar]()
+- [Insertar valores para empezar](https://github.com/Fabian-Martinez1/Fablog/blob/main/src/pages/posts/files/dbd.md)
 - [Base de datos para testear](https://github.com/Fabian-Martinez1/Fablog/blob/main/src/pages/posts/files/sql.json)
 
 
