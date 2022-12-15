@@ -7,7 +7,7 @@ createdAt: 1663134489800
 updatedAt: 1663635618067
 tags:
   - Facultad
-heroImage: /posts/dbd.jpg
+heroImage: /posts/dbd3.jpg
 ---
 
 

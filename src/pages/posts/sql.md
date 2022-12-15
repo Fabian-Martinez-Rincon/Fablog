@@ -7,7 +7,7 @@ createdAt: 1663635792232
 updatedAt: 1663635814121
 tags:
   - sql
-heroImage: /posts/sql.jpg
+heroImage: /posts/sql3.jpg
 ---
 
 ## Creamos las tablas
