@@ -117,6 +117,9 @@ public class Sistema(){
 ```
 
 ### Contribuyente
+
+
+
 ### Propiedad
 ### Vehiculo
 
