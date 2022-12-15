@@ -7,7 +7,7 @@ createdAt: 1663138523826
 updatedAt: 1663138544071
 tags:
   - oo1
-heroImage: /posts/oo1.jpg
+heroImage: /posts/oo3.jpg
 ---
 
 
@@ -134,3 +134,4 @@ public abstract class Vehiculo implements Propiedad{
 ### Embarcacion
 ### Automotor
 ### Inmueble
+
