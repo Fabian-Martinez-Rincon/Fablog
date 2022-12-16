@@ -530,3 +530,5 @@ public class Factura{
 - Menos , 12 meses y mas
 - 
 
+
+![Parcial Objetos2](https://user-images.githubusercontent.com/55964635/208182330-33e1a0be-04fe-45f2-ae56-2d87c742ba7c.svg)
