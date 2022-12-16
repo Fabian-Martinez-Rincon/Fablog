@@ -55,7 +55,7 @@ Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la fu
 ### Uml (Click derecho y abrir en la web para el zoom)
 
 
-<img src="./files/uml.jpg" alt="Texto alternativo de la imagen">
+<img src="https://user-images.githubusercontent.com/55964635/207999264-13dfd9c0-d0eb-41d5-a889-6abe97e29aff.jpg" alt="Texto alternativo de la imagen">
 
 ## Objetos
 
