@@ -54,7 +54,8 @@ Su tarea es diseñar y programar en Java lo que sea necesario para ofrecer la fu
 
 ### Uml (Click derecho y abrir en la web para el zoom)
 
-![](/src/pages/posts/files/image.webp)
+
+<img src="./files/image.webp" alt="Texto alternativo de la imagen">
 
 ## Objetos
 
