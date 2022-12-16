@@ -297,3 +297,46 @@ Implemente la siguiente funcionalidad:
 - Donde fecha 1 es anterior a fecha2. La expresión retorna la cantidad de años entre ambas fechas
 - Implemente **todos** los constructores que considere necesarios
 - Puede implementar un getter y un setter y asumir la existencia del resto
+
+## Links utiles
+
+- [UML](https://lucid.app/lucidchart/bab3b02d-03b4-4d82-8666-99c4a789f776/edit?page=HWEp-vi-RSFO&invitationId=inv_a9dd4fad-f00e-4b9d-8903-1e6ac83c2eda#)
+
+
+## Objetos
+
+- [Sistema](#sistema2)
+- [Repuesto](#repuesto)
+- [Empleado](#empleado)
+- [Orden](#orden)
+- [CompraRepuesto](#compraRepuesto)
+- [Reparacion](#reparacion)
+- [Factura](#factura)
+
+### Sistema2
+```java
+```
+
+### Repuesto
+```java
+```
+
+### Empleado
+```java
+```
+
+### Orden
+```java
+```
+
+### CompraRepuesto
+```java
+```
+
+### Reparacion
+```java
+```
+
+### Factura
+```java
+```
