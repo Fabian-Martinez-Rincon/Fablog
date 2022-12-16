@@ -1,8 +1,8 @@
 ---
-description: Parciales de Objetos
+description: Parciales de Objetos 1
 public: true
 layout: ../../layouts/BlogPost.astro
-title: Programación Orientada a Objetos 1
+title: Programación Orientada a Objetos 
 createdAt: 1663138523826
 updatedAt: 1663138544071
 tags:
