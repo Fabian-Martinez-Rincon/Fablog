@@ -287,7 +287,7 @@ Implemente la siguiente funcionalidad:
 
 - Diseño de su solución en un diagrama de clases UML
 - Implementación en Java de la funcionalidad requerida
-- Implemente los test necesarios para la funcionalidad de facturar una orden de combra de repuestos, justificando su elección en base a valores de borde y particiones equivalentes
+- Implemente los test necesarios para la funcionalidad de facturar una orden de compra de repuestos, justificando su elección en base a valores de borde y particiones equivalentes
 
 ### Notas
 - Para calcular los años entre dos fechas puede utilizar la siguiente expresión
@@ -315,28 +315,218 @@ Implemente la siguiente funcionalidad:
 
 ### Sistema2
 ```java
+public class Sistema{
+  private List<Repuesto> repuestos;
+  private List<Empleado> empleados;
+  private List<Orden> ordenes;
+
+
+  public Sistema(){
+    this.repuestos = new ArrayList();
+    this.empelados = new ArrayList();
+    this.ordenes = new ArrayList();
+  }
+
+  public Repuesto agregarRepuesto(String nombre, LocalDate fechaFabricacion, Real costo){
+    Repuesto nuevo = new Repuesto(nombre, fechaFabricacion, costo);
+    repuestos.add(nuevo);
+    return nuevo;
+  }
+
+  public Repuesto agregarEmpleado(String nombreC,  double valorH){
+    Repuesto nuevo = new Empleado(nombreC, valorH);
+    empleados.add(nuevo);
+    return nuevo;
+  }
+
+  public Orden agregarRepuesto(String patente,  List<Repuesto> repuestos){
+    Orden nuevo = new CompraRepuesto(patente , repuestos);
+    ordenes.add(nuevo);
+    return nuevo;
+  }
+
+  public Orden agregarReparacion(String patente, String descripcion,  List<Repuesto> repuestos, List<Empleado> empleados){
+    Orden nuevo = new Orden(patente, descripcion, repuestos, empleados);
+    ordenes.add(nuevo);
+    return nuevo;
+  }
+
+  public List<Factura> facturarOrdenes(){
+    return ordenes.Stream()
+      .map(orden -> orden.generarFactura(aplicaDescuento(orden))
+      .collect(Collectors.toList());
+  }
+
+  public boolean aplicaDescuento(Orden ord){
+    return this.ordenes.stream()
+      .anyMatch(orden -> orden.getPatente().equals(ord.getPatente())
+      && orden.getAntiguedad() = 0 && !(orden.equals(ord)))
+  }
+
+}
 ```
 
 ### Repuesto
+
 ```java
+public class Repuesto{
+  private String nombre;
+  private LocalDate fechaFabricación;
+  private double costo;
+
+  public void Repuesto(String nombre, LocalDate fechaFabricación, double valor){
+    this.nombre = nombre;
+    this.fechaFabricacion = fechaFabricacion;
+    this.valor = valor;
+  }
+
+  public int getAntiguedad(){
+    return ChronoUnit.YEARS.between(this.fechaFabricación, LocalDateTime.now());
+  }
+
+  public int getCosto(){return this.costo}
+
 ```
 
 ### Empleado
+
 ```java
+public class Empleado{
+  private String nombreC;
+  private double valorH;
+
+  public Empleado(String nombreC, double valorH){
+    this.nombreC = nombre;
+    this.valorH = valorH;
+  }
+
+  public double getValorH(){return this.valorH;}
+
+  public double  calcularCostoHora(int cantH){
+    return getValorH() * cantH;
+  }
+}
 ```
 
 ### Orden
 ```java
+public class abstract Orden{
+  private String patente;
+  protected List<Repuesto> repuestos;
+  private LocalDate fecha = LocalDateTime.now();
+
+  public Orden(String patente,List<Repuesto> repuestos){
+    this.patente = patente;
+    this.repuestos = repuestos;
+  }
+
+  public Factura generarFactura(boolean aplicaDescuento){
+    Factura nuevo = new Factura(LocalDateTime.now(), this.patente, montoTotal(aplicaDescuento));
+    return nuevo;
+  }
+  public double montoTotal(boolean aplicaDescuento){
+    if !(aplicaDescuento){
+      return calcularMonto() * calcularIncremento();
+    }
+    return (calcularMonto() * calcularIncremento()) * 0.05;
+    
+  }
+  
+
+  public double calcularCostoRepuestos(){
+    return this.repuestos.Stream()
+      .map(repuesto -> repuesto.getCosto())
+      .sum();
+  }
+
+  public int getAntiguedad(){
+    return ChronoUnit.YEARS.between(this.fecha, LocalDateTime.now(););
+  }
+
+
+  abstract public double calcularMonto();
+  abstract public int calcularIncremento();
+  public String getPatente(){return this.patente;}
+}
 ```
 
 ### CompraRepuesto
 ```java
+public class CompraRepuesto{
+  public CompraRepuesto(String patente, List<Repuesto> repuestos){
+      super(patente, repuestos);
+    }
+
+  public boolean alguno5Anios(){
+    return this.repuestos.stream()
+      .anyMatch(repuesto -> repuesto.getAntiguedad() > 5)
+  }
+  public Integer calcularIncremento(){
+    if (alguno5Anios) {
+      return 0.08;
+    }
+    return 0.15;
+  }
+
+  public double calcularMonto(){
+    return calcularCostoRepuestos();
+  }
+  
+}
 ```
 
 ### Reparacion
 ```java
+public class Reparacion{
+  private String descripcion;
+  private Integer cantHoras;
+  private List<Empleado> empleados;
+
+  public Reparacion(String patente, String descripcion, List<Repuesto> repuestos, List<Empleado> empleados){
+      super(patente, repuestos)
+      this.descripcion = descripcion;
+      this.empleados = empleados;
+    }
+
+    public double calcularCostoEmpleado(){
+    return this.empleados.Stream()
+      .map(empleado -> empleado.calcularCostoHora(this.cantHoras))
+      .sum();
+  }
+
+  public int calcularIncremento(){return 0.1;};
+  public double calcularMonto(){
+    return calcularCostoEmpleado() + calcularCostoRepuestos();
+  }
+  
+  
+}
 ```
 
 ### Factura
 ```java
+public class Factura{
+  private LocalDate fecha;
+  private String patente; 
+  private double montoFinal; 
+  private Integer descuento;
+
+  public void Factura(fLocalDate fecha, String patente, double montoFinal, int descuento){
+    this.fecha = fecha;
+    this.patente = patente;
+    this.montoFinal = montoFinal;
+    this.descuento = descuento;
+  }
+  //Generar getter y setters :D
+
+}
 ```
+
+
+## Test
+
+
+
+- Menos , 12 meses y mas
+- 
+
