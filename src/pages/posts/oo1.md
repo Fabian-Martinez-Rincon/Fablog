@@ -278,5 +278,22 @@ Implemente la siguiente funcionalidad:
   - El costo de la orden de compra de repuestos se calcula sumando los costos de cada uno de los repuestos involucrados. Sobre este costo se aplica un incremento de ganancia del 15%. En caso de que alguno de los repuestos tenga más de 5 años desde su fabricación, este incremento de ganancia será sólo del 8%.
   - El costo de la orden de reparación se calcula sumando:
     - Lo que cobra cada uno de los empleados intervinientes y la cantidad de horas de la reparación (para simplificar todos los empleados intervinientes cobrarán esa cantidad de horas)
-    - El costo de los repuestos involucrados\
+    - El costo de los repuestos involucrados
+
     Sobre el costo de la orden se aplica un incremento de ganancia del 10%
+- Para ambos casos y luego de aplicar la ganancia, si MyCarBoxes tuviera registrada alguna otra orden para la misma patente en los últimos 12 meses, le aplica un descuento del 5% sobre el total.
+
+### Tareas
+
+- Diseño de su solución en un diagrama de clases UML
+- Implementación en Java de la funcionalidad requerida
+- Implemente los test necesarios para la funcionalidad de facturar una orden de combra de repuestos, justificando su elección en base a valores de borde y particiones equivalentes
+
+### Notas
+- Para calcular los años entre dos fechas puede utilizar la siguiente expresión
+  ```java
+    ChronoUnit.YEARS.between(fecha1, fecha2);
+  ```
+- Donde fecha 1 es anterior a fecha2. La expresión retorna la cantidad de años entre ambas fechas
+- Implemente **todos** los constructores que considere necesarios
+- Puede implementar un getter y un setter y asumir la existencia del resto
