@@ -1,5 +1,7 @@
 ### Cover letter
 
+eeee
+
 He estado siguiendo de cerca el trabajo de su empresa y estoy impresionado por su énfasis en la excelencia y la innovación en el campo de la tecnología y la programación. Me gustaría formar parte de un equipo que comparta mis mismos valores y que tenga un impacto positivo en el mundo.
 
 Mi experiencia incluye distribución de tareas sobre un equipo, sobre las tecnologías puestas en el CV y Tutor en Matemáticas que me permitió fortalecer mis habilidades blandas. Tengo experiencia en lenguajes de programación como JavaScript, Python y Java, y he trabajado en proyectos que involucran el trabajo en quipo y estar constantemente aprendiendo. Creo que estas habilidades me hacen un buen candidato para este puesto y me gustaría tener la oportunidad de contribuir a la empresa.
