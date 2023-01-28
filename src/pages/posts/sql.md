@@ -263,11 +263,27 @@ WHERE NOT (DESTINO.nombreCiudad = "Coronel Brandsen")
 SELECT COUNT(*) AS CANTIDAD_VIAJES
     FROM VIAJE V
     INNER JOIN AGENCIA A ON (V.razon_social = A.RAZON_SOCIAL)
-WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
+    INNER JOIN CIUDAD ORIGEN ON (V.cpOrigen = ORIGEN.CODIGOPOSTAL)
+    INNER JOIN CIUDAD DESTINO ON (V.cpDestino = DESTINO.CODIGOPOSTAL)
+WHERE (A.RAZON_SOCIAL = 'TAXI') AND (
+  (ORIGEN.nombreCiudad = "Villa Elisa") OR (DESTINO.nombreCiudad = "Villa Elisa")
+)
+  
+  
 ```
 ### Ejercicio 2.6
 ```sql
-
+SELECT C.nombre, C.apellido, C.direccion, C.telefono
+FROM CLIENTE C
+WHERE NOT EXISTS (
+  SELECT *
+  FROM AGENCIA A
+  WHERE NOT EXISTS (
+    SELECT *
+    FROM VIAJE V
+    WHERE (V.DNI = C.DNI) AND (V.razon_social = A.RAZON_SOCIAL)
+  )
+)
 ```
 ### Ejercicio 2.7
 ```sql
