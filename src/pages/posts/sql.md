@@ -11,6 +11,9 @@ heroImage: /posts/sql3.jpg
 ---
 
 
+## FALTAN
+- 2.8
+
 ## Para la siguientes tablas
 
 - **Cliente**(idCliente, nombre, apellido, DNI, telefono, direccion)
@@ -287,19 +290,39 @@ WHERE NOT EXISTS (
 ```
 ### Ejercicio 2.7
 ```sql
-
+UPDATE CLIENTE 
+SET telefono="221-4400897" 
+WHERE DNI="38495444"
 ```
 ### Ejercicio 2.8
 ```sql
+SELECT A.razon_social, A.direccion, A.telefono
+  FROM AGENCIA A
+  INNER JOIN VIAJE V ON (A.RAZON_SOCIAL = V.razon_social)
+WHERE COUNT(*) >= ALL(
+  SELECT COUNT(*)
+    FROM AGENCIA A
+    INNER JOIN VIAJE V ON (A.RAZON_SOCIAL = V.razon_social)
 
+)
 ```
 ### Ejercicio 2.9
 ```sql
-
+SELECT C.nombre, C.apellido, C.direccion, C.telefono
+  FROM CLIENTE C
+  INNER JOIN VIAJE V ON (C.DNI = V.DNI)
+GROUP BY C.nombre, C.apellido, C.direccion, C.telefono
+HAVING COUNT(*) >= 10
 ```
 ### Ejercicio 2.10
 ```sql
+DELETE 
+  FROM VIAJE 
+WHERE DNI="40325692"
 
+DELETE 
+  FROM CLIENTE 
+WHERE DNI="40325692"
 ```
 
 ---
@@ -326,7 +349,15 @@ WHERE NOT EXISTS (
 
 ### Ejercicio 3.1
 ```sql
-
+SELECT C.nombre, C.anioFundacion
+  FROM Club C
+  INNER JOIN Ciudad CI ON (C.codigoCiudad = CI.codigoCiudad)
+WHERE CI.nombre = 'La Plata'
+EXCEPT (
+  SELECT C.nombre, C.anioFundacion
+    FROM Club C
+    INNER JOIN Estadio E ON (C.codigoClub = Estadio.codigoClub)
+)
 ```
 ### Ejercicio 3.2
 ```sql
