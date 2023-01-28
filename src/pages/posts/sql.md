@@ -39,10 +39,10 @@ en el siguiente [link](https://github.com/Fabian-Martinez1/Fablog/blob/main/src/
 
 ## Tabla 1
 
-- **Cliente**(``idCliente``, nombre, apellido, DNI, telefono, direccion)
-- **Factura** (``nroTicket``, total, fecha, hora,idCliente (fk))
-- **Detalle**(``nroTicket, idProducto``, cantidad, preciounitario)
-- **Producto**(``idProducto``, descripcion, precio, nombreP, stock)
+- **Cliente**(**idCliente**, nombre, apellido, DNI, telefono, direccion)
+- **Factura** (**nroTicket**, total, fecha, hora,idCliente (fk))
+- **Detalle**(**nroTicket, idProducto**, cantidad, preciounitario)
+- **Producto**(**idProducto**, descripcion, precio, nombreP, stock)
 
 ## Consignas Ejercicio 1
 
@@ -197,10 +197,10 @@ HAVING SUM(F.total) > 10000000
 
 ## Tabla 2
 
-- **AGENCIA** (``RAZON_SOCIAL``, dirección, telef, e-mail)
-- **CIUDAD** (``CODIGOPOSTAL``, nombreCiudad, añoCreación)
-- **CLIENTE** (``DNI``, nombre, apellido, teléfono, dirección)
-- **VIAJE**( ``FECHA,HORA,DNI``, cpOrigen(fk), cpDestino(fk), razon_social(fk), descripcion)
+- **AGENCIA** (**RAZON_SOCIAL**, dirección, telef, e-mail)
+- **CIUDAD** (**CODIGOPOSTAL**, nombreCiudad, añoCreación)
+- **CLIENTE** (**DNI**, nombre, apellido, teléfono, dirección)
+- **VIAJE**( **FECHA,HORA,DNI**, cpOrigen(fk), cpDestino(fk), razon_social(fk), descripcion)
 //cpOrigen y cpDestino corresponden a la ciudades origen y destino del viaje
 
 ## Consignas Ejercicio 2
@@ -290,11 +290,11 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 ## Tabla 3
 
-- **Club**=(``codigoClub``, nombre, anioFundacion, codigoCiudad(FK))
-- **Ciudad**=(``codigoCiudad``, nombre)
-- **Estadio**=(``codigoEstadio``, codigoClub(FK), nombre, direccion)
-- **Jugador**=(``DNI``, nombre, apellido, edad, codigoCiudad(FK))
-- **ClubJugador**(``codigoClub``, DNI, desde, hasta)
+- **Club**=(**codigoClub**, nombre, anioFundacion, codigoCiudad(FK))
+- **Ciudad**=(**codigoCiudad**, nombre)
+- **Estadio**=(**codigoEstadio**, codigoClub(FK), nombre, direccion)
+- **Jugador**=(**DNI**, nombre, apellido, edad, codigoCiudad(FK))
+- **ClubJugador**=(**codigoClub**, DNI, desde, hasta)
 
 ## Consignas Ejercicio 3
 
@@ -350,14 +350,14 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 ## Tabla 4
 
-- **PERSONA** = (``DNI``, Apellido, Nombre, Fecha_Nacimiento, Estado_Civil, Genero)
-- **ALUMNO** = (``DNI``, Legajo, Año_Ingreso)
-- **PROFESOR** = (``DNI``, Matricula, Nro_Expediente)
-- **TITULO** = (``Cod_Titulo``, Nombre, Descripción)
-- **TITULO-PROFESOR** = (``Cod_Titulo, DNI``, Fecha)
-- **CURSO** = (``Cod_Curso``, Nombre, Descripción, Fecha_Creacion, Duracion)
-- **ALUMNO-CURSO** = (``DNI, Cod_Curso, Año``, Desempeño, Calificación)
-- **PROFESOR-CURSO** = (``DNI, Cod_Curso, Fecha_Desde``, Fecha_Hasta)
+- **PERSONA** = (**DNI**, Apellido, Nombre, Fecha_Nacimiento, Estado_Civil, Genero)
+- **ALUMNO** = (**DNI**, Legajo, Año_Ingreso)
+- **PROFESOR** = (**DNI**, Matricula, Nro_Expediente)
+- **TITULO** = (**Cod_Titulo**, Nombre, Descripción)
+- **TITULO-PROFESOR** = (**Cod_Titulo, DNI**, Fecha)
+- **CURSO** = (**Cod_Curso**, Nombre, Descripción, Fecha_Creacion, Duracion)
+- **ALUMNO-CURSO** = (**DNI, Cod_Curso, Año**, Desempeño, Calificación)
+- **PROFESOR-CURSO** = (**DNI, Cod_Curso, Fecha_Desde**, Fecha_Hasta)
 
 ## Consignas Ejercicio 4
 
@@ -422,10 +422,10 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 ## Tabla 5
 
-- **Localidad**(``CodigoPostal``, nombreL, descripcion, #habitantes)
-- **Arbol**(``nroArbol``, especie, años, calle, nro, codigoPostal(fk))
-- **Podador**(``DNI``, nombre, apellido, telefono,fnac,codigoPostalVive(fk))
-- **Poda**(``codPoda``,fecha, DNI(fk),nroArbol(fk))
+- **Localidad**(**CodigoPostal**, nombreL, descripcion, #habitantes)
+- **Arbol**(**nroArbol**, especie, años, calle, nro, codigoPostal(fk))
+- **Podador**(**DNI**, nombre, apellido, telefono,fnac,codigoPostalVive(fk))
+- **Poda**(**codPoda**,fecha, DNI(fk),nroArbol(fk))
 
 
 ## Consignas Ejercicio 5
@@ -481,10 +481,10 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 ## Tabla 6
 
-- **Técnico** (``codTec``, nombre, especialidad) // técnicos
-- **Repuesto** (``codRep``, nombre, stock, precio) // repuestos
-- **RepuestoReparacion** (``nroReparac, codRep``, cantidad, precio) //repuestos utilizados en reparaciones.
-- **Reparación** (``nroReparac``, codTec, precio_total, fecha) //reparaciones realizadas
+- **Técnico** (**codTec**, nombre, especialidad) // técnicos
+- **Repuesto** (**codRep**, nombre, stock, precio) // repuestos
+- **RepuestoReparacion** (**nroReparac, codRep**, cantidad, precio) //repuestos utilizados en reparaciones.
+- **Reparación** (**nroReparac**, codTec, precio_total, fecha) //reparaciones realizadas
 
 ## Consignas Ejercicio 6
 
@@ -542,10 +542,10 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 
 ## Tabla 7
-- **Banda**(``codigoB``, nombreBanda, genero_musical, año_creacion)
-- **Integrante**(``DNI``, nombre, apellido,dirección,email, fecha_nacimiento,codigoB(fk))
-- **Escenario**(``nroEscenario``, nombre _ escenario, ubicación,cubierto, m2, descripción)
-- **Recital**(``fecha,hora,nroEscenario``, codigoB (fk))
+- **Banda**(**codigoB**, nombreBanda, genero_musical, año_creacion)
+- **Integrante**(**DNI**, nombre, apellido,dirección,email, fecha_nacimiento,codigoB(fk))
+- **Escenario**(**nroEscenario**, nombre _ escenario, ubicación,cubierto, m2, descripción)
+- **Recital**(**fecha,hora,nroEscenario**, codigoB (fk))
 
 ## Consignas Ejercicio 7
 
@@ -600,11 +600,11 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 ## Tabla 8
 
-- **Equipo**(``codigoE``, nombreE, descripcionE)
-- **Integrante**`` (DNI``, nombre, apellido,ciudad,email, telefono,codigoE(fk))
-- **Laguna**(``nroLaguna``, nombreL, ubicación,extension, descripción)
-- **TorneoPesca**(``codTorneo``, fecha,hora,nroLaguna(fk), descripcion)
-- **Inscripcion**(``codTorneo,codigoE``,asistio, gano)// asistio y gano son true o false según corresponda
+- **Equipo**(**codigoE**, nombreE, descripcionE)
+- **Integrante** (**DNI**, nombre, apellido,ciudad,email, telefono,codigoE(fk))
+- **Laguna**(**nroLaguna**, nombreL, ubicación,extension, descripción)
+- **TorneoPesca**(**codTorneo**, fecha,hora,nroLaguna(fk), descripcion)
+- **Inscripcion**(**codTorneo,codigoE**,asistio, gano)// asistio y gano son true o false según corresponda
 
 ## Consignas Ejercicio 8
 
@@ -659,10 +659,10 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 ## Tabla 9
 
-- **Proyecto**(``codProyecto``, nombrP,descripcion, fechaInicioP, fechaFinP, fechaFinEstimada,DNIResponsable, equipoBackend, equipoFrontend) //DNIResponsable corresponde a un empleado, equipoBackend y equipoFrontend corresponden a un equipo
-- **Equipo**(``codEquipo``, nombreE, descripcionTecnologias,DNILider)//DNILider corresponde a un empleado
-- **Empleado**(``DNI``,nombre, apellido, telefono, direccion, fechaIngreso)
-- **Empleado_Equipo**(``codEquipo ,DNI, fechaInicio``, fechaFin,descripcionRol)
+- **Proyecto**(**codProyecto**, nombrP,descripcion, fechaInicioP, fechaFinP, fechaFinEstimada,DNIResponsable, equipoBackend, equipoFrontend) //DNIResponsable corresponde a un empleado, equipoBackend y equipoFrontend corresponden a un equipo
+- **Equipo**(**codEquipo**, nombreE, descripcionTecnologias,DNILider)//DNILider corresponde a un empleado
+- **Empleado**(**DNI**,nombre, apellido, telefono, direccion, fechaIngreso)
+- **Empleado_Equipo**(**codEquipo ,DNI, fechaInicio**, fechaFin,descripcionRol)
 
 ## Consignas Ejercicio 9
 
@@ -717,12 +717,12 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 ## Tabla 10
 
-- **Vehiculo** = (``patente``, modelo, marca, peso, km)
-- **Camion** = (``patente``, largo, max_toneladas, cant_ruedas, tiene_acoplado)
-- **Auto** = (``patente``, es_electrico, tipo_motor)
-- **Service** = (``fecha, patente``, km_service, observaciones, monto)
-- **Parte** = (``cod_parte``, nombre, precio_parte)
-- **Service_Parte** = (``fecha, patente, cod_parte``, precio)
+- **Vehiculo** = (**patente**, modelo, marca, peso, km)
+- **Camion** = (**patente**, largo, max_toneladas, cant_ruedas, tiene_acoplado)
+- **Auto** = (**patente**, es_electrico, tipo_motor)
+- **Service** = (**fecha, patente**, km_service, observaciones, monto)
+- **Parte** = (**cod_parte**, nombre, precio_parte)
+- **Service_Parte** = (**fecha, patente, cod_parte**, precio)
 
 ## Consignas Ejercicio 10
 
@@ -777,10 +777,10 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 
 ## Tabla 11
 
-- **Box** = (``nroBox``,m2, ubicación, capacidad, ocupacion) //ocupación es un numérico indicando cantidad de mascotas en el box actualmente, capacidad es una descripción.
-- **Mascota** = (``codMascota``,nombre, edad, raza, peso, telefonoContacto)
-- **Veterinario** = (``matricula``, CUIT, nombYAp, direccion, telefono)
-- **Supervision** = (``codMascota,nroBox, fechaEntra``, fechaSale?, matricula(fk), descripcionEstadia) //fechaSale tiene valor null si la mascota está actualmente en el box
+- **Box** = (**nroBox**,m2, ubicación, capacidad, ocupacion) //ocupación es un numérico indicando cantidad de mascotas en el box actualmente, capacidad es una descripción.
+- **Mascota** = (**codMascota**,nombre, edad, raza, peso, telefonoContacto)
+- **Veterinario** = (**matricula**, CUIT, nombYAp, direccion, telefono)
+- **Supervision** = (**codMascota,nroBox, fechaEntra**, fechaSale?, matricula(fk), descripcionEstadia) //fechaSale tiene valor null si la mascota está actualmente en el box
 
 ## Consignas Ejercicio 11
 
@@ -821,10 +821,10 @@ WHERE (A.RAZON_SOCIAL = 'TAXI') AND ()
 ## Tabla 12
 
 Modelo Físico
-- **Barberia** = (``codBarberia``, razon_social, direccion, telefono)
-- **Cliente** = (``nroCliente``,DNI, nombYAp, direccionC, fechaNacimiento, celular)
-- **Barbero** = (``codEmpleado``,DNIB, nombYApB, direccionB, telefonoContacto, mail)
-- **Atencion** = (``codEmpleado ,Fecha,hora``,codBarberia(fk), nroCliente(fk),descTratamiento, valor)
+- **Barberia** = (**codBarberia**, razon_social, direccion, telefono)
+- **Cliente** = (**nroCliente**,DNI, nombYAp, direccionC, fechaNacimiento, celular)
+- **Barbero** = (**codEmpleado**,DNIB, nombYApB, direccionB, telefonoContacto, mail)
+- **Atencion** = (**codEmpleado ,Fecha,hora**,codBarberia(fk), nroCliente(fk),descTratamiento, valor)
 
 ## Consignas Ejercicio 12
 
@@ -867,11 +867,11 @@ Modelo Físico
 ## Tabla 13
 
 Modelo Físico
-- **Club**(``IdClub``,nombreClub,ciudad)
-- **Complejo**(``IdComplejo``,nombreComplejo, IdClub(fk))
-- **Cancha**(``IdCancha``,nombreCancha,IdComplejo(fk))
-- **Entrenador**(``IdEntrenador``, nombreEntrenador,fechaNacimiento, direccion)
-- **Entrenamiento**(``IdEntrenamiento``, fecha, IdEntrenador(fk), IdCancha(fk))
+- **Club**(**IdClub**,nombreClub,ciudad)
+- **Complejo**(**IdComplejo**,nombreComplejo, IdClub(fk))
+- **Cancha**(**IdCancha**,nombreCancha,IdComplejo(fk))
+- **Entrenador**(**IdEntrenador**, nombreEntrenador,fechaNacimiento, direccion)
+- **Entrenamiento**(**IdEntrenamiento**, fecha, IdEntrenador(fk), IdCancha(fk))
 
 
 ## Consignas Ejercicio 13
@@ -913,10 +913,10 @@ Modelo Físico
 ## Tabla 14
 
 Modelo Físico
-- **Cine** (``idCine``, nombreC, direccion)
-- **Sala** (``nroSala``, nombreS, descripción, capacidad,idCine(fk))
-- **Pelicula** (``idPeli``, nombre, descripción, genero)
-- **Funcion** (``nroFuncion``, nroSala(fk), idPeli(fk), fecha, hora, ocupación)//ocupación indica cantidad de espectadores de la función
+- **Cine** (**idCine**, nombreC, direccion)
+- **Sala** (**nroSala**, nombreS, descripción, capacidad,idCine(fk))
+- **Pelicula** (**idPeli**, nombre, descripción, genero)
+- **Funcion** (**nroFuncion**, nroSala(fk), idPeli(fk), fecha, hora, ocupación)//ocupación indica cantidad de espectadores de la función
 
 ## Consignas Ejercicio 14
 
