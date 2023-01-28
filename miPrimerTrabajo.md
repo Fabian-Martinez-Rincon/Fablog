@@ -1,6 +1,5 @@
 ### Cover letter
 
-eeee
 
 He estado siguiendo de cerca el trabajo de su empresa y estoy impresionado por su énfasis en la excelencia y la innovación en el campo de la tecnología y la programación. Me gustaría formar parte de un equipo que comparta mis mismos valores y que tenga un impacto positivo en el mundo.
 
